@@ -1,0 +1,25 @@
+{
+  "name": "comision-21523-a-agustin-arnedo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AArnedo/COMISION-21523-A-AGUSTIN-ARNEDO.git"
+  },
+  "keywords": [],
+  "author": "Agustin Arnedo",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
