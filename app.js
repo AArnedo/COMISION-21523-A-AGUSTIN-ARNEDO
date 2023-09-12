@@ -1,33 +1,30 @@
-/* Importación de todas las Librerías */
+// Importación de todas las Librerías 
 const express = require('express')
 const cors = require('cors');
 const morgan = require('morgan');
-require('dotenv').config()
+const path = require('path'); /* Nos permite resolver y corregir directorios */
+require('dotenv').config();
+require('ejs');
+
 const helmet = require('helmet');
-const ejs = require('ejs');
+const { request } = require('http');
+
 const app = express()
-
-
 const port = process.env.PORT || 3000;
 
-/* Middlewares */
+// Middlewares 
 app.use(cors())
-app.use(morgan('combined'))
+app.use(morgan('dev'))
 app.use(express.json()) /* Se utiliza para que el servidor pueda comprender el formato JSON */
 
+// Archivos Estáticos 
+app.use( express.static(path.join(__dirname, 'public')) )
+
+//Motor de plantilla EJS
+app.set('view engine', 'ejs');
+
+//Importación de Rutas
+app.use(require ('./routes/foro.routes'));
 
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-
-app.post('/user' , function (req, res) {
-
-    /* Recibimos los datos por el body */
-    const { name, lastname } = req.body
-
-    res.send(`¡Bienvenido ${name} ${lastname}!`)
-
-})
-
-app.listen(port, () => console.log(`Servidor en http://localhost:${port}`))
+app.listen(port, () => console.log(`Bienvenido al servidor en http://localhost:${port}`))
