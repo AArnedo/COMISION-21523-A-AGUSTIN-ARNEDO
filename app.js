@@ -2,11 +2,13 @@
 const express = require('express')
 const cors = require('cors');
 const morgan = require('morgan');
+require('dotenv').config()
 const helmet = require('helmet');
 const ejs = require('ejs');
-const dotenv = require('dotenv');
 const app = express()
-const port = 4000;
+
+
+const port = process.env.PORT || 3000;
 
 /* Middlewares */
 app.use(cors())
