@@ -3,6 +3,14 @@ const express = require('express')
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path'); /* Nos permite resolver y corregir directorios */
+
+//Conexión a Base de Datos.
+const { sequelize } = require ('./database');
+sequelize.authenticate() //Intenta realizar la conexión como tal
+.then(()=> console.log("Conexión a Base de Datos Exitosa"))
+.catch( err => console.log('Error al conectar a la Base de Datos:', err))
+
+
 require('dotenv').config();
 require('ejs');
 

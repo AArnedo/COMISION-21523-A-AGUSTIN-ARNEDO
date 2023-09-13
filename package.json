@@ -12,7 +12,7 @@
     "url": "https://github.com/AArnedo/COMISION-21523-A-AGUSTIN-ARNEDO.git"
   },
   "keywords": [],
-  "author": "Agustin Arnedo",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
