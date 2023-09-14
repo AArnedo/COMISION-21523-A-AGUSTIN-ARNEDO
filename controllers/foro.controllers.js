@@ -47,5 +47,11 @@ ctrl.eliminarPublicacion = async (req, res) => {
     msg:"¡Publicacion Eliminada correctamente!"
   })
 }
+ctrl.obtenerPublicacion = async (req, res) => {
+
+  const publicacion = await Publicaciones.findByPk(req.params.id)
+  return publicacion;
+}
+
 
 module.exports = ctrl;

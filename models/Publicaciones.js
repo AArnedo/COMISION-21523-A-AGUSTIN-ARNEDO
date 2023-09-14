@@ -28,5 +28,4 @@ const PublicacionSchema = sequelize.define('Publicaciones', {
     timestamps: false
   });
 
-
   module.exports = PublicacionSchema;

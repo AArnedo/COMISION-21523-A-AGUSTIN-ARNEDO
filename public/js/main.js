@@ -20,7 +20,6 @@ formGuardar.addEventListener('submit' , async (e) => {
         body: JSON.stringify({titulo,comentarios,url_imagen,fecha}),
     })
     const data = await response.json ();
-    console.log(data.msg);
-    
-
+    alert(data.msg);
+    location.href = "/"
 })
