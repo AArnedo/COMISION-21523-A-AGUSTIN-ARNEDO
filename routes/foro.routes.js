@@ -1,23 +1,29 @@
+
+
 /* Incorporaremos el erutado de Express */
 const router = require ('express').Router();
 
+const {
+      actualizarPublicacion, 
+      crearPublicacion, 
+      eliminarPublicacion,
+      obtenerPublicaciones
+} = require('../controllers/foro.controllers');
 
 router.get('/', (req, res) =>{
         res.render ('home');
   })
   
-router.post('/new-publication' , (req, res) => {
-  
-      /* Recibimos los datos por el body */
-      const { titulo, comentario } = req.body
+//Creando una nueva publicación
+router.post('/publicacion' , crearPublicacion);
+//Obtener todas las publicaciones
+router.get('/publicaciones/', obtenerPublicaciones)
+//Actualizar una publicación
+router.put('/publicacion/:id', actualizarPublicacion)
+//Eliminar una publicación
+router.delete('/publicacion/:id', eliminarPublicacion)
 
-      // Se guardan los datos en una DB
-      console.log(titulo, comentario);
 
 
-      //Mensaje retornado
-      return res.send( {msg: 'Publicación guardada con Éxito!'} );
-      
-  })
 
   module.exports = router;

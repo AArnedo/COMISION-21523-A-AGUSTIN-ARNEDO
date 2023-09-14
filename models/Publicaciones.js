@@ -1,4 +1,4 @@
-const { DataTypes, sequelize } = require ('../models/database');
+const { DataTypes, sequelize } = require ('../database');
 
 const PublicacionSchema = sequelize.define('Publicaciones', {
     // Model attributes are defined here
@@ -25,7 +25,8 @@ const PublicacionSchema = sequelize.define('Publicaciones', {
     }
   },{
     tableName: 'publicaciones',
-    tiemstamps: false
+    timestamps: false
   });
+
 
   module.exports = PublicacionSchema;
