@@ -19,7 +19,7 @@ const PublicacionSchema = sequelize.define('Publicaciones', {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
-    url_imagen:{
+    url_imagen: {
       type: DataTypes.STRING,
       allowNull: true,
     }

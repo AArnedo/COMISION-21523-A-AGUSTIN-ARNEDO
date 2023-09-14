@@ -1,0 +1,36 @@
+<%-include('partials/header') %>
+<%-include('partials/navbar') %>
+
+
+<h1 class="text-center">FORO MULTITEMATICO</h1>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="#" id="form-guardar">
+                <div class="mb-3 mt-4">
+                  <label for="" class="form-label">Titulo del Post</label>
+                  <input id="titulo-post" type="text" class="form-control">
+                </div>
+                <div class="mb-4">
+                  <label for="" class="form-label">Deja tu comentario</label><br>
+                  <textarea id="comentario-post" cols="100" rows="10"></textarea>
+                </div>
+                <div class="mb-4">
+                    <input id="url-img" type="text" placeholder="URL Imagen" class="form-control">
+                    
+                </div>
+                <div class="mb-4">
+                    <label for="">Fecha de Post</label>
+                    <input type="date" name="" id="fecha">
+                </div>
+                <button id="btn-enviar" type="submit" class="btn btn-danger">Enviar</button>
+              </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+
+<%-include('partials/footer') %>
