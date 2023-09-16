@@ -9,14 +9,18 @@ const mostrarPublicaciones = (publicaciones, elementoHTML) =>{
     //método para recorrer todos los registros
     publicaciones.forEach(publicacion => {
         secciones += `
-        
-        <section class="">
+
+        <section>
             <div class="card border-warning border-3" style="width: 18rem;">
                     <img src="${publicacion.url_imagen}" class="card-img-top" alt="imagen">
                 <div class="card-body">
                     <h5 class="card-title">${publicacion.titulo}</h5>
                     <p class="card-text">${publicacion.comentarios}</p>
                     <p>${publicacion.fecha}</p>
+                </div>
+                <div class="d-flex justify-content-center gap-4 m-2">
+                    <button class="btn btn-danger">Borrar</button>
+                    <button class="btn btn-primary">Actualizar</button>
                 </div>
             </div>
         </section>
@@ -36,3 +40,4 @@ console.log(publicaciones);
     const main = document.querySelector('#lista-publicaciones')
     mostrarPublicaciones(publicaciones, main)
 })
+
